@@ -9,16 +9,20 @@
 import UIKit
 
 class ForecastTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet var foreImage: UIImageView!
+    @IBOutlet var descLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    
+ weak var viewModel: ForecastWeatherCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            foreImage.image = UIImage(named:viewModel.foreImage)
+            descLabel.text = viewModel.descLabel
+            tempLabel.text = viewModel.tempLabel
+            timeLabel.text = viewModel.time
+        }
     }
 
 }

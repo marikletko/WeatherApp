@@ -21,8 +21,15 @@ struct Main: Decodable {
     var humidity: Int = 0
 }
 
+struct Wind: Decodable {
+    var speed: Double = 0.0
+    var deg: Int = 0
+}
+
+
 struct WeatherData: Decodable {
     var weather: [Weather] = []
     var main: Main = Main()
+    var wind: Wind = Wind()
     var name: String = ""
 }

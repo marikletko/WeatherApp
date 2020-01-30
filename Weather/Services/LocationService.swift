@@ -9,68 +9,72 @@
 import Foundation
 import CoreLocation
 
-
-class LocationService: NSObject, CLLocationManagerDelegate {
-    static let sharedInstance: LocationService = {
-        let instance = LocationService()
-        return instance
+class LocationManager: NSObject {
+    
+    // MARK: - Properties
+    private lazy var locationManager: CLLocationManager = {
+        // Initialize Location Manager
+        let locationManager = CLLocationManager()
+        
+        // Configure Location Manager
+        locationManager.distanceFilter = 1000.0
+        locationManager.desiredAccuracy = 1000.0
+        
+        return locationManager
     }()
     
-    var locationManager: CLLocationManager?
-    var currentLocation: CLLocation?
+    typealias LocationResponse = ((CLLocation) -> ())
+    let locationResponse: LocationResponse
     
-    override init() {
-        super.init()
-        
-        self.locationManager = CLLocationManager()
-        guard let locationManager = self.locationManager else {
-            return
-        }
-        
-        if CLLocationManager.authorizationStatus() == .notDetermined {
+    // MARK: - Init
+    init(locationResponse: @escaping LocationResponse) {
+        self.locationResponse = locationResponse
+    }
+    
+    // MARK: - Functions
+    func requestLocation() {
+        locationManager.delegate = self
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        } else {
             locationManager.requestWhenInUseAuthorization()
         }
-      
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
-        locationManager.distanceFilter = 200 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
-        locationManager.delegate = self
     }
     
-    static func isLocationServiceEnabled() -> Bool {
-        if CLLocationManager.locationServicesEnabled() {
-            switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                return false
-            case .authorizedAlways, .authorizedWhenInUse:
-                return true
-            }
+}
+
+enum Defaults {
+    
+    static let location = CLLocation(latitude: 37.335114, longitude: -122.008928)
+    
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    
+    // MARK: - Location Change Authorization
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            manager.requestLocation()
         } else {
-            print("Location services are not enabled")
-            return false
+            locationResponse(Defaults.location)
         }
     }
     
-    
-    func startUpdatingLocation() {
-        print("Starting Location Updates")
-        self.locationManager?.startUpdatingLocation()
-    }
-    
-    func stopUpdatingLocation() {
-        print("Stop Location Updates")
-        self.locationManager?.stopUpdatingLocation()
-    }
-    
-    // CLLocationManagerDelegate
+    // MARK: - Location Updates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        guard let location = locations.last else {
-            return
+        if let location = locations.first {
+            locationResponse(location)
+            manager.delegate = nil
+            print("dada")
+            manager.stopUpdatingHeading()
+        } else { // Failed to get location
+            locationResponse(Defaults.location)
         }
-        manager.stopUpdatingLocation()
-        print(location.coordinate.latitude)
-        // singleton for get last(current) location
-        currentLocation = location
-        
     }
+    
+    // MARK: - Location Did Fail
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationResponse(Defaults.location)
+    }
+    
 }

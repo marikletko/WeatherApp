@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Location {
-    let latitude: Double
-    let longitude: Double
+struct LocationModel {
+    var latitude: Double = 0
+    var longitude: Double = 0
 }

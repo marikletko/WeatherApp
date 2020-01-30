@@ -8,6 +8,18 @@
 
 import Foundation
 
-protocol MainWeatherViewModelType {
+protocol MainWeatherViewModelType: class {
+    
+    var weatherImg: String { get }
+    var cityAndCountryLabel: String { get }
+    var tempAndDescLabel: String { get }
+    var speed: String { get }
+    var deg: Int { get }
+    var pressure: Int { get }
+    var humidity: Int { get }
+    
      func updateWeatherInfo(latitude: Double, longtitude: Double, handler: @escaping(_ weatherData: WeatherData?, _ error: Error?)->())
+    
+    
+    
 }
