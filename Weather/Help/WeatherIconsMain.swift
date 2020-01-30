@@ -1,11 +1,4 @@
-//
-//  WeatherIconsMain.swift
-//  Weather
-//
-//  Created by Kirill Letko on 1/30/20.
-//  Copyright © 2020 Letko. All rights reserved.
-//
-
+import Foundation
 import UIKit
 
 class WeatherIconsMain: UIView {

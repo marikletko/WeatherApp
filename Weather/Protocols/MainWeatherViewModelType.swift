@@ -1,12 +1,5 @@
-//
-//  MainWeatherViewModelType.swift
-//  Weather
-//
-//  Created by Kirill Letko on 1/29/20.
-//  Copyright © 2020 Letko. All rights reserved.
-//
-
 import Foundation
+import CoreLocation
 
 protocol MainWeatherViewModelType: class {
     
@@ -18,7 +11,7 @@ protocol MainWeatherViewModelType: class {
     var pressure: Int { get }
     var humidity: Int { get }
     
-     func updateWeatherInfo(latitude: Double, longtitude: Double, handler: @escaping(_ weatherData: WeatherData?, _ error: Error?)->())
+    func updateWeatherInfo(latitude: Double, longitude: Double, handler: @escaping(_ weatherData: WeatherData?, _ error: Error?)->())
     
     
     

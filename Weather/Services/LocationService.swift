@@ -1,80 +1,131 @@
-//
-//  LocationService.swift
-//  Weather
-//
-//  Created by Kirill Letko on 1/29/20.
-//  Copyright © 2020 Letko. All rights reserved.
-//
+import UIKit
+import MapKit
 
-import Foundation
-import CoreLocation
-
-class LocationManager: NSObject {
+class LocationManager: NSObject,CLLocationManagerDelegate {
     
-    // MARK: - Properties
-    private lazy var locationManager: CLLocationManager = {
-        // Initialize Location Manager
-        let locationManager = CLLocationManager()
-        
-        // Configure Location Manager
-        locationManager.distanceFilter = 1000.0
-        locationManager.desiredAccuracy = 1000.0
-        
-        return locationManager
+    enum LocationErrors: String {
+        case denied = "Locations are turned off. Please turn it on in Settings"
+        case notFetched = "Unable to fetch location"
+    }
+    
+    private var locationFetchTimeInSeconds = 1.0
+    
+    typealias LocationClosure = ((_ location:CLLocation?,_ error: NSError?)->Void)
+    
+    private var locationCompletionHandler: LocationClosure?
+    
+    private var locationManager:CLLocationManager?
+   
+    private var lastLocation:CLLocation?
+    
+    static let sharedInstance: LocationManager = {
+        let instance = LocationManager()
+        return instance
     }()
     
-    typealias LocationResponse = ((CLLocation) -> ())
-    let locationResponse: LocationResponse
-    
-    // MARK: - Init
-    init(locationResponse: @escaping LocationResponse) {
-        self.locationResponse = locationResponse
-    }
-    
-    // MARK: - Functions
-    func requestLocation() {
-        locationManager.delegate = self
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager.requestLocation()
-        } else {
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
-    
-}
 
-enum Defaults {
-    
-    static let location = CLLocation(latitude: 37.335114, longitude: -122.008928)
-    
-}
-
-extension LocationManager: CLLocationManagerDelegate {
-    
-    // MARK: - Location Change Authorization
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            manager.requestLocation()
-        } else {
-            locationResponse(Defaults.location)
-        }
+    deinit {
+        destroyLocationManager()
     }
     
-    // MARK: - Location Updates
+    //MARK:- Private Methods
+    private func setupLocationManager() {
+
+        locationManager = nil
+        locationManager = CLLocationManager()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        
+    }
+    
+    private func destroyLocationManager() {
+        locationManager?.delegate = nil
+        locationManager = nil
+        lastLocation = nil
+    }
+    
+    private func startThread() {
+        self.perform(#selector(sendLocation), with: nil, afterDelay: locationFetchTimeInSeconds)
+    }
+    
+    @objc private func sendLocation() {
+        guard let _ = lastLocation else {
+            self.didComplete(location: nil,error: NSError(
+                domain: self.classForCoder.description(),
+                code:Int(CLAuthorizationStatus.denied.rawValue),
+                userInfo:
+                [NSLocalizedDescriptionKey:LocationErrors.notFetched.rawValue,
+                 NSLocalizedFailureReasonErrorKey:LocationErrors.notFetched.rawValue,
+                 NSLocalizedRecoverySuggestionErrorKey:LocationErrors.notFetched.rawValue]))
+            lastLocation = nil
+            return
+        }
+        self.didComplete(location: lastLocation,error: nil)
+        lastLocation = nil
+    }
+    
+
+    func getLocation(completionHandler:@escaping LocationClosure) {
+        
+        //Cancelling the previous selector handlers if any
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        
+    
+        lastLocation = nil
+        
+        self.locationCompletionHandler = completionHandler
+        
+        setupLocationManager()
+    }
+
+    
+   
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            locationResponse(location)
-            manager.delegate = nil
-            print("dada")
-            manager.stopUpdatingHeading()
-        } else { // Failed to get location
-            locationResponse(Defaults.location)
-        }
+        lastLocation = locations.last
     }
     
-    // MARK: - Location Did Fail
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+            
+        case .authorizedWhenInUse,.authorizedAlways:
+            self.locationManager?.startUpdatingLocation()
+                startThread()
+        case .denied:
+            let deniedError = NSError(
+                domain: self.classForCoder.description(),
+                code:Int(CLAuthorizationStatus.denied.rawValue),
+                userInfo:
+                [NSLocalizedDescriptionKey:LocationErrors.denied.rawValue,
+                 NSLocalizedFailureReasonErrorKey:LocationErrors.denied.rawValue,
+                 NSLocalizedRecoverySuggestionErrorKey:LocationErrors.denied.rawValue])
+                didComplete(location: nil,error: deniedError)
+        case .restricted:
+                didComplete(location: nil,error: NSError(
+                    domain: self.classForCoder.description(),
+                    code:Int(CLAuthorizationStatus.restricted.rawValue),
+                    userInfo: nil))
+            break
+            
+        case .notDetermined:
+            self.locationManager?.requestWhenInUseAuthorization()
+            break
+    }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationResponse(Defaults.location)
+        print(error.localizedDescription)
+        self.didComplete(location: nil, error: error as NSError?)
     }
     
+    //MARK:- Final closure/callback
+    private func didComplete(location: CLLocation?,error: NSError?) {
+        locationManager?.stopUpdatingLocation()
+        locationCompletionHandler?(location,error)
+        locationManager?.delegate = nil
+        locationManager = nil
+    }
+
 }

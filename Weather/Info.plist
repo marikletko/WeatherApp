@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>yes</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>yes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Accessing photo library?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Do you want to access app using your location?</string>
 	<key>CFBundleDevelopmentRegion</key>
