@@ -65,6 +65,15 @@ class MainWeatherViewController: UIViewController {
                     self.tempAndDescLabel.text = self.mainWeatherViewModel?.tempAndDescLabel
                     self.activity.isHidden = true
                     self.activityBlur.isHidden = true
+                    
+                    let shareText =
+                    "Pressure: \(self.mainWeatherViewModel!.pressure)" +
+                    "\nWind speed:\(self.mainWeatherViewModel!.speed)" +
+                    "\nHumidity: \(self.mainWeatherViewModel!.humidity)" +
+                    "\nCity: \(self.mainWeatherViewModel!.cityAndCountryLabel)" +
+                    "\n\(self.mainWeatherViewModel!.tempAndDescLabel)"
+                    UserDefaults.standard.set(shareText, forKey: "shareText")
+                        
                 }
             })
             
@@ -74,13 +83,11 @@ class MainWeatherViewController: UIViewController {
     }
     
     @IBAction func shareWeatherButton(_ sender: UIButton) {
-        let bounds = UIScreen.main.bounds
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
-        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        let activityViewController = UIActivityViewController(activityItems: [img!], applicationActivities: nil)
-        self.present(activityViewController, animated: true, completion: nil)
+        let text = UserDefaults.standard.value(forKey: "shareText")
+                let textShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textShare as [Any] , applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                self.present(activityViewController, animated: true, completion: nil)
     }
     
     
