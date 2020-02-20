@@ -12,11 +12,9 @@ class MainWeatherViewController: UIViewController {
     @IBOutlet var weatherIcons: [UIView]!
     
     var mainWeatherViewModel:MainWeatherViewModelType?
-    //  var locationManager: LocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mainWeatherViewModel = MainWeatherViewModel()
         
         

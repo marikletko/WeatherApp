@@ -14,7 +14,7 @@ class ForecastWeatherCellViewModel: ForecastWeatherCellViewModelType {
         return String(Int(forecastcell.main.temp)) + " ℃"
     }
     var time: String {
-        return forecastcell.dt_txt
+        return String(String(forecastcell.dt_txt.dropFirst(11)).dropLast(3))
     }
     
     

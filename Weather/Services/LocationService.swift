@@ -89,7 +89,6 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         switch status {
-            
         case .authorizedWhenInUse,.authorizedAlways:
             self.locationManager?.startUpdatingLocation()
                 startThread()
