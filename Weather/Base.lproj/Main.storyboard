@@ -105,7 +105,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-<<<<<<< HEAD
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-lJ-gaf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dh5-IH-R6L">
@@ -114,18 +113,6 @@
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="q19-SD-MqO">
                                             <rect key="frame" x="197" y="396" width="20" height="20"/>
-=======
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-lJ-gaf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="dh5-IH-R6L">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="q19-SD-MqO">
-                                            <rect key="frame" x="197" y="396" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -142,15 +129,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-<<<<<<< HEAD
                         <constraints>
                             <constraint firstItem="xuc-lJ-gaf" firstAttribute="leading" secondItem="43N-sF-1dt" secondAttribute="leading" id="Uu9-Dr-wTA"/>
                             <constraint firstItem="xuc-lJ-gaf" firstAttribute="trailing" secondItem="43N-sF-1dt" secondAttribute="trailing" id="iZi-F1-Xhe"/>
                             <constraint firstItem="xuc-lJ-gaf" firstAttribute="top" secondItem="sFM-kV-Pzt" secondAttribute="top" id="kcO-HV-nAh"/>
                             <constraint firstItem="xuc-lJ-gaf" firstAttribute="bottom" secondItem="43N-sF-1dt" secondAttribute="bottom" id="mPn-Hf-6Wo"/>
                         </constraints>
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                         <viewLayoutGuide key="safeArea" id="43N-sF-1dt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Current weather" image="04d" id="TWE-YU-LHb">
@@ -193,11 +177,7 @@
         <!--Register First View Controller-->
         <scene sceneID="azl-IB-BA1">
             <objects>
-<<<<<<< HEAD
                 <viewController storyboardIdentifier="RegisterFirstViewController" modalPresentationStyle="fullScreen" id="KuH-sP-117" customClass="RegisterFirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-=======
-                <viewController modalPresentationStyle="fullScreen" id="KuH-sP-117" customClass="RegisterFirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     <view key="view" contentMode="scaleToFill" id="tVB-i5-gsT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,7 +286,6 @@
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="qcf-Ju-YE0" id="c04-0x-r4d"/>
                         <outlet property="continueButton" destination="Uqb-j9-NB5" id="wG1-v0-KCB"/>
-<<<<<<< HEAD
                         <outlet property="emailOutlet" destination="qDb-gv-gsR" id="qe8-0v-cuh"/>
                         <outlet property="errorLabel" destination="dis-ew-Hqb" id="pBs-Bv-kTg"/>
                         <outlet property="iconBottomLayoutConstraint" destination="V8G-LE-e8z" id="MhJ-Vm-C6I"/>
@@ -314,10 +293,6 @@
                         <outlet property="passwordBottomLayoutConstraint" destination="yg4-bP-Msw" id="J42-b6-cKv"/>
                         <outlet property="passwordOutlet" destination="DXK-54-Qh1" id="sKt-88-Akr"/>
                         <outlet property="reenterLabel" destination="3oz-Pl-cr8" id="NQa-QD-egT"/>
-=======
-                        <outlet property="errorLabel" destination="dis-ew-Hqb" id="pBs-Bv-kTg"/>
-                        <outlet property="loginOutlet" destination="SR7-Ti-VvT" id="maO-xg-Thv"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sc-hz-06V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -327,11 +302,7 @@
         <!--Register Second View Controller-->
         <scene sceneID="K7y-zG-nQe">
             <objects>
-<<<<<<< HEAD
                 <viewController storyboardIdentifier="RegisterSecondViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OsX-8o-byA" customClass="RegisterSecondViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-=======
-                <viewController modalPresentationStyle="fullScreen" id="OsX-8o-byA" customClass="RegisterSecondViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     <view key="view" contentMode="scaleToFill" id="cce-RX-CRl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,11 +399,8 @@
                     <connections>
                         <outlet property="addressTextField" destination="RLi-9A-K6h" id="cTg-1J-Ayg"/>
                         <outlet property="bottomLayoutConstraint" destination="0Av-r5-3xh" id="DGJ-b8-KFl"/>
-<<<<<<< HEAD
                         <outlet property="iconBottomLayoutConstraint" destination="tgy-lH-WO8" id="c2w-gF-4l0"/>
                         <outlet property="sexBottomLayoutConstraint" destination="wwy-CW-rde" id="bcx-7m-2sh"/>
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                         <outlet property="sexTextField" destination="r9y-jU-SYh" id="AdO-3P-6FF"/>
                         <outlet property="txtDatePicker" destination="ov0-e6-bmo" id="zMZ-ph-VGd"/>
                         <outlet property="workTextField" destination="eOe-e5-Quq" id="0OC-sk-iYK"/>
@@ -445,11 +413,7 @@
         <!--Register Third View Controller-->
         <scene sceneID="nUm-60-chE">
             <objects>
-<<<<<<< HEAD
                 <viewController storyboardIdentifier="RegisterThirdViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3JE-ku-Zy8" customClass="RegisterThirdViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-=======
-                <viewController modalPresentationStyle="fullScreen" id="3JE-ku-Zy8" customClass="RegisterThirdViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     <view key="view" contentMode="scaleToFill" id="DuP-aQ-uMW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,11 +474,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
                                     <action selector="goLoginVC:" destination="3JE-ku-Zy8" eventType="touchUpInside" id="FKg-NL-HNv"/>
-=======
-                                    <segue destination="qkw-82-nmZ" kind="show" id="eNl-UR-cod"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 </connections>
                             </button>
                         </subviews>
@@ -538,11 +498,8 @@
                     <navigationItem key="navigationItem" id="24x-3L-TLd"/>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="pIA-JV-agp" id="LJM-Nc-ioI"/>
-<<<<<<< HEAD
                         <outlet property="iconBottomLayoutConstraint" destination="oiF-Ca-5g5" id="eOU-QH-YgH"/>
                         <outlet property="zipBottomLayoutConstraint" destination="gqp-2q-k2F" id="AaB-gE-2aB"/>
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFS-Se-d4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -564,11 +521,7 @@
                                     <constraint firstAttribute="height" constant="130" id="PoP-XQ-XEN"/>
                                 </constraints>
                             </imageView>
-<<<<<<< HEAD
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-Dt-PCb">
-=======
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-Dt-PCb">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <rect key="frame" x="97.5" y="518" width="219" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="7NB-GA-hc4"/>
@@ -591,11 +544,7 @@
                                     <segue destination="xdM-Qi-Vis" kind="show" id="BLF-wx-iCd"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login or email to change password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcW-tF-a1K">
-=======
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter email to change password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcW-tF-a1K">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <rect key="frame" x="0.0" y="423" width="414" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="crE-yk-h8L"/>
@@ -622,20 +571,13 @@
                     <navigationItem key="navigationItem" id="FF1-Xk-vOy"/>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="HgH-At-Fat" id="Q4c-xz-fBD"/>
-<<<<<<< HEAD
                         <outlet property="emailBottomLayoutConstraint" destination="gTg-Vc-Tgw" id="YLi-DB-5Kn"/>
                         <outlet property="iconBottomLayoutConstraint" destination="5nF-mm-tZk" id="ZiN-SK-d8s"/>
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETJ-z8-cB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="-2971" y="-893"/>
-=======
-            <point key="canvasLocation" x="-2971.0144927536235" y="-890.625"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
         </scene>
         <!--New Password View Controller-->
         <scene sceneID="PsM-Ha-mEx">
@@ -692,11 +634,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
                                     <action selector="goLoginVC:" destination="xdM-Qi-Vis" eventType="touchUpInside" id="Pe2-zv-ejx"/>
-=======
-                                    <segue destination="qkw-82-nmZ" kind="show" id="ite-Kv-RkM"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 </connections>
                             </button>
                         </subviews>
@@ -718,11 +656,8 @@
                     <navigationItem key="navigationItem" id="Jus-7g-GiA"/>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="y96-P6-ojZ" id="g6M-ST-WDi"/>
-<<<<<<< HEAD
                         <outlet property="iconBottomLayoutConstraint" destination="ma5-nf-0af" id="DDM-Zp-5Pi"/>
                         <outlet property="reenterBottomLayoutConstraints" destination="8Gx-4Z-Fu4" id="PZO-v8-nPE"/>
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-el-Ste" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -732,16 +667,11 @@
         <!--Start View Controller-->
         <scene sceneID="h6g-AJ-22F">
             <objects>
-<<<<<<< HEAD
                 <viewController storyboardIdentifier="StartViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qkw-82-nmZ" customClass="StartViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-=======
-                <viewController modalPresentationStyle="fullScreen" id="qkw-82-nmZ" customClass="StartViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     <view key="view" contentMode="scaleToFill" id="jtD-kP-E8W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-Ig-SWG">
                                 <rect key="frame" x="126.5" y="95" width="161" height="130"/>
                                 <constraints>
@@ -768,50 +698,21 @@
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-=======
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-Ig-SWG">
-                                <rect key="frame" x="126" y="95" width="161" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHG-uS-FwM">
-                                <rect key="frame" x="97" y="391" width="219" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot password?" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-qo-Gqk">
-                                <rect key="frame" x="181" y="434" width="132" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOb-7J-0KP">
-                                <rect key="frame" x="172" y="429" width="144" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <connections>
                                     <action selector="forgotPasswordButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="Bes-Up-lUj"/>
                                     <segue destination="SPJ-88-qxI" kind="show" id="uCj-ua-tVh"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr4-tW-YLO">
                                 <rect key="frame" x="126.5" y="677" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7aE-2s-Gkq"/>
                                     <constraint firstAttribute="width" constant="161" id="jig-4f-hnu"/>
                                 </constraints>
-=======
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr4-tW-YLO">
-                                <rect key="frame" x="127" y="677" width="161" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5o-Fr-YW3">
                                 <rect key="frame" x="98" y="724" width="51" height="50"/>
                                 <constraints>
@@ -851,54 +752,16 @@
                                     <constraint firstAttribute="width" constant="199" id="Y3Y-nn-Lhh"/>
                                     <constraint firstAttribute="height" constant="21" id="rDf-wZ-Oa9"/>
                                 </constraints>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5o-Fr-YW3">
-                                <rect key="frame" x="98" y="724" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Gmail_Icon"/>
-                                <connections>
-                                    <action selector="gmailButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="Dcb-Ui-3cX"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="4kD-6h-vIS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-l3-ebd">
-                                <rect key="frame" x="181" y="724" width="51" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="vk-logo--fb"/>
-                                <connections>
-                                    <action selector="vkButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="CEN-8J-leu"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="xQN-KF-AP4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-03-Oh9">
-                                <rect key="frame" x="258" y="724" width="51" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="9eb384eb1d9d09e82bcef6852d38085c"/>
-                                <connections>
-                                    <action selector="fbButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="kK6-Jb-KZF"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="Bmd-c0-gK6"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGE-8g-f0F">
-                                <rect key="frame" x="38" y="824" width="199" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TH-xu-gX6">
                                 <rect key="frame" x="271" y="809" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RHa-fF-f7x"/>
                                     <constraint firstAttribute="width" constant="100" id="wmD-JM-Hkw"/>
                                 </constraints>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TH-xu-gX6">
-                                <rect key="frame" x="271" y="809" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -907,23 +770,16 @@
                                     <segue destination="KuH-sP-117" kind="show" id="4jN-Ib-G3W"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3V-f4-lxn">
                                 <rect key="frame" x="97.5" y="349" width="219" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="YWC-sh-3R3"/>
                                     <constraint firstAttribute="width" constant="219" id="ls7-Z8-ZyW"/>
                                 </constraints>
-=======
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3V-f4-lxn">
-                                <rect key="frame" x="98" y="349" width="219" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuX-RE-V9g">
                                 <rect key="frame" x="126.5" y="488" width="161" height="50"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -931,12 +787,6 @@
                                     <constraint firstAttribute="height" constant="50" id="MZZ-QZ-wly"/>
                                     <constraint firstAttribute="width" constant="161" id="jrf-QN-V8L"/>
                                 </constraints>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuX-RE-V9g">
-                                <rect key="frame" x="127" y="488" width="161" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -944,7 +794,6 @@
                                     <action selector="loginButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="1rI-3P-OUV"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-SS-c7g">
                                 <rect key="frame" x="97.5" y="308" width="219" height="33"/>
                                 <constraints>
@@ -996,18 +845,6 @@
                         <outlet property="loginInput" destination="N3V-f4-lxn" id="6Eh-Hc-pqY"/>
                         <outlet property="loginOutlet" destination="nuX-RE-V9g" id="AXE-YA-g3f"/>
                         <outlet property="passwordOutlet" destination="LHG-uS-FwM" id="Blw-bN-zau"/>
-=======
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="cf3-Td-GrK"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2gK-3s-Aog"/>
-                    <connections>
-                        <outlet property="forgotPassword" destination="HPb-qo-Gqk" id="kPc-fn-waz"/>
-                        <outlet property="loginInput" destination="N3V-f4-lxn" id="6Eh-Hc-pqY"/>
-                        <outlet property="loginOutlet" destination="nuX-RE-V9g" id="AXE-YA-g3f"/>
-                        <outlet property="passwordInput" destination="LHG-uS-FwM" id="DXa-ET-a11"/>
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvc-ey-Z9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1017,11 +854,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="sra-vI-goz">
             <objects>
-<<<<<<< HEAD
                 <tabBarController storyboardIdentifier="TabBarController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R3L-aw-PMA" sceneMemberID="viewController">
-=======
-                <tabBarController modalPresentationStyle="fullScreen" id="R3L-aw-PMA" sceneMemberID="viewController">
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                     <navigationItem key="navigationItem" id="exk-dy-eX6"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="lws-0m-1mT">
@@ -1134,9 +967,4 @@
         <image name="forecast" width="41" height="41"/>
         <image name="vk-logo--fb" width="415" height="408"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BLF-wx-iCd"/>
-        <segue reference="4kD-6h-vIS"/>
-        <segue reference="ite-Kv-RkM"/>
-    </inferredMetricsTieBreakers>
 </document>

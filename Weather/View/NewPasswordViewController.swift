@@ -10,7 +10,6 @@ import UIKit
 
 class NewPasswordViewController: UIViewController {
 
-<<<<<<< HEAD
     @IBAction func goLoginVC(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
  
@@ -18,8 +17,6 @@ class NewPasswordViewController: UIViewController {
     
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var reenterBottomLayoutConstraints: NSLayoutConstraint!
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +36,6 @@ registerForKeyboardNotifications()
                let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
                if notification.name == UIResponder.keyboardWillHideNotification {
-<<<<<<< HEAD
                    bottomLayoutConstraint.constant = 81
                 reenterBottomLayoutConstraints.constant = 137
                   iconBottomLayoutConstraint.constant = 198
@@ -47,11 +43,6 @@ registerForKeyboardNotifications()
                    bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
                 reenterBottomLayoutConstraints.constant = 20
                   iconBottomLayoutConstraint.constant = 20
-=======
-                   bottomLayoutConstraint.constant = 80
-               } else {
-                   bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                }
 
                view.needsUpdateConstraints()

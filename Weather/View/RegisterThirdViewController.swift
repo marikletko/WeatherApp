@@ -10,7 +10,6 @@ import UIKit
 
 class RegisterThirdViewController: UIViewController {
 
-<<<<<<< HEAD
     @IBAction func goLoginVC(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: Singleton.shared.currentAccount ?? "")
         navigationController?.popToRootViewController(animated: true)
@@ -18,8 +17,6 @@ class RegisterThirdViewController: UIViewController {
     
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var zipBottomLayoutConstraint: NSLayoutConstraint!
-=======
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -41,7 +38,6 @@ class RegisterThirdViewController: UIViewController {
                let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
                if notification.name == UIResponder.keyboardWillHideNotification {
-<<<<<<< HEAD
                    bottomLayoutConstraint.constant = 85
                 zipBottomLayoutConstraint.constant = 133
                 iconBottomLayoutConstraint.constant = 130
@@ -49,11 +45,6 @@ class RegisterThirdViewController: UIViewController {
                    bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
                 zipBottomLayoutConstraint.constant = 30
                 iconBottomLayoutConstraint.constant = 20
-=======
-                   bottomLayoutConstraint.constant = 80
-               } else {
-                   bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
->>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                }
 
                view.needsUpdateConstraints()
