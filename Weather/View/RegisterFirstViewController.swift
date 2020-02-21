@@ -53,8 +53,8 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
         }
         
         if(emailOutlet.text != nil && emailOutlet.text != "") {
-            if(!emailOutlet.text!.contains("@")) {
-                errorLabel.text = "@ is missing"
+            if(!emailOutlet.text!.contains("@") && !emailOutlet.text!.contains(".")) {
+                errorLabel.text = "Wrong email"
                 continueButton.isEnabled = false
             } else {
               

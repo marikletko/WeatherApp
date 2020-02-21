@@ -10,6 +10,11 @@ import UIKit
 
 class NewPasswordViewController: UIViewController {
 
+    @IBAction func goLoginVC(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+ 
+    }
+    
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var reenterBottomLayoutConstraints: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!

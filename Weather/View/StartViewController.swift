@@ -14,22 +14,59 @@ class StartViewController: UIViewController, UITextFieldDelegate {
         if(loginInput.text == "pupa" && passwordOutlet.text == "pupalupa") {
           let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
           self.present(vc, animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: "loggedin")
         } else {
             loginErrorLabel.text = "Incorrect login or password"
         }
     }
     
     @IBAction func gmailButton(_ sender: Any) {
+          Singleton.shared.currentAccount = "gmail"
+        let y = UserDefaults.standard.bool(forKey: "gmail")
+        if(y == true) {
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
+                         self.navigationController?.pushViewController(controller, animated: true)
+              UserDefaults.standard.set(true, forKey: "loggedin")
+        } else {
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "RegisterFirstViewController") as? RegisterFirstViewController else { return }
+                                    self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @IBAction func vkButton(_ sender: UIButton) {
+          Singleton.shared.currentAccount = "vk"
+        let y = UserDefaults.standard.bool(forKey: "vk")
+               if(y == true) {
+                   guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
+                                self.navigationController?.pushViewController(controller, animated: true)
+                  UserDefaults.standard.set(true, forKey: "loggedin")
+               } else {
+                   guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "RegisterFirstViewController") as? RegisterFirstViewController else { return }
+                                           self.navigationController?.pushViewController(controller, animated: true)
+               }
     }
     
     @IBAction func fbButton(_ sender: UIButton) {
+        Singleton.shared.currentAccount = "fb"
+        let y = UserDefaults.standard.bool(forKey: "fb")
+               if(y == true) {
+                   guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
+                                self.navigationController?.pushViewController(controller, animated: true)
+                  UserDefaults.standard.set(true, forKey: "loggedin")
+               } else {
+                   guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "RegisterFirstViewController") as? RegisterFirstViewController else { return }
+                                           self.navigationController?.pushViewController(controller, animated: true)
+               }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(UserDefaults.standard.bool(forKey: "loggedin")) {
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
+                                                      self.navigationController?.pushViewController(controller, animated: false)
+        }
+        
         self.hideKeyboardWhenTappedAround()
         registerForKeyboardNotifications()
         loginOutlet.layer.cornerRadius = loginOutlet.frame.size.height / 2

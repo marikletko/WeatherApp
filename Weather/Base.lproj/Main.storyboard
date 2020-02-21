@@ -2,11 +2,51 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2re-3n-nKY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="fmZ-UB-qH6">
+            <objects>
+                <viewController storyboardIdentifier="UserInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V11-La-Z1n" customClass="UserInfoViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1XC-K1-tzO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsM-ov-qwC">
+                                <rect key="frame" x="95" y="713" width="225" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButton:" destination="V11-La-Z1n" eventType="touchUpInside" id="tSn-Bn-jN6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-xS-Vkr">
+                                <rect key="frame" x="20" y="138" width="374" height="487"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tjP-Qi-BmA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="dQM-l7-6jZ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="userInfoLabel" destination="BeZ-xS-Vkr" id="YZA-dm-ga3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FU0-RW-sAN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.00000000000006" y="-1213.3928571428571"/>
+        </scene>
         <!--Current weather-->
         <scene sceneID="VXk-l2-0I0">
             <objects>
@@ -137,7 +177,7 @@
         <!--Register First View Controller-->
         <scene sceneID="azl-IB-BA1">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="KuH-sP-117" customClass="RegisterFirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterFirstViewController" modalPresentationStyle="fullScreen" id="KuH-sP-117" customClass="RegisterFirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tVB-i5-gsT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +302,7 @@
         <!--Register Second View Controller-->
         <scene sceneID="K7y-zG-nQe">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="OsX-8o-byA" customClass="RegisterSecondViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterSecondViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OsX-8o-byA" customClass="RegisterSecondViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cce-RX-CRl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,7 +413,7 @@
         <!--Register Third View Controller-->
         <scene sceneID="nUm-60-chE">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="3JE-ku-Zy8" customClass="RegisterThirdViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterThirdViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3JE-ku-Zy8" customClass="RegisterThirdViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DuP-aQ-uMW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,7 +474,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qkw-82-nmZ" kind="show" id="eNl-UR-cod"/>
+                                    <action selector="goLoginVC:" destination="3JE-ku-Zy8" eventType="touchUpInside" id="FKg-NL-HNv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -594,7 +634,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qkw-82-nmZ" kind="show" id="ite-Kv-RkM"/>
+                                    <action selector="goLoginVC:" destination="xdM-Qi-Vis" eventType="touchUpInside" id="Pe2-zv-ejx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -682,7 +722,6 @@
                                 <state key="normal" title="Button" image="Gmail_Icon"/>
                                 <connections>
                                     <action selector="gmailButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="Dcb-Ui-3cX"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="4kD-6h-vIS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-l3-ebd">
@@ -694,7 +733,6 @@
                                 <state key="normal" title="Button" image="vk-logo--fb"/>
                                 <connections>
                                     <action selector="vkButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="CEN-8J-leu"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="xQN-KF-AP4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-03-Oh9">
@@ -706,7 +744,6 @@
                                 <state key="normal" title="Button" image="9eb384eb1d9d09e82bcef6852d38085c"/>
                                 <connections>
                                     <action selector="fbButton:" destination="qkw-82-nmZ" eventType="touchUpInside" id="kK6-Jb-KZF"/>
-                                    <segue destination="R3L-aw-PMA" kind="show" id="Bmd-c0-gK6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGE-8g-f0F">
@@ -799,6 +836,7 @@
                         <viewLayoutGuide key="safeArea" id="cf3-Td-GrK"/>
                     </view>
                     <navigationItem key="navigationItem" id="2gK-3s-Aog"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="7C4-TH-MId" id="LUS-lA-jKH"/>
                         <outlet property="forgotPassword" destination="uOb-7J-0KP" id="eIQ-Zg-Wwb"/>
@@ -818,6 +856,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R3L-aw-PMA" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="exk-dy-eX6"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="lws-0m-1mT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -828,11 +867,12 @@
                     <connections>
                         <segue destination="1q8-zU-IvG" kind="relationship" relationship="viewControllers" id="hFp-cn-Mr6"/>
                         <segue destination="aJt-JI-AhG" kind="relationship" relationship="viewControllers" id="Thf-hq-ZQa"/>
+                        <segue destination="V11-La-Z1n" kind="relationship" relationship="viewControllers" id="Bz6-y0-p9f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqT-wR-HtU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551" y="-158"/>
+            <point key="canvasLocation" x="-762" y="-378"/>
         </scene>
         <!--Forecast weather-->
         <scene sceneID="4Ec-fz-yFk">
@@ -927,9 +967,4 @@
         <image name="forecast" width="41" height="41"/>
         <image name="vk-logo--fb" width="415" height="408"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="uCj-ua-tVh"/>
-        <segue reference="xQN-KF-AP4"/>
-        <segue reference="ite-Kv-RkM"/>
-    </inferredMetricsTieBreakers>
 </document>

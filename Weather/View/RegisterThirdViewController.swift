@@ -10,6 +10,11 @@ import UIKit
 
 class RegisterThirdViewController: UIViewController {
 
+    @IBAction func goLoginVC(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: Singleton.shared.currentAccount ?? "")
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var zipBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!

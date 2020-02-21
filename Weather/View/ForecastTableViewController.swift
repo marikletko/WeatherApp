@@ -5,6 +5,12 @@ class ForecastTableViewController: UITableViewController {
     let reuseIdentifier = "cell"
     var forecastWeatherViewModel:ForecastWeatherViewModelType?
     var locationManager: LocationManager?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 70
