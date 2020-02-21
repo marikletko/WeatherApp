@@ -10,26 +10,37 @@ import UIKit
 
 class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
 
+<<<<<<< HEAD
     @IBOutlet var emailOutlet: UITextField!
+=======
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBOutlet var loginOutlet: UITextField!
  @IBOutlet var continueButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
     
+<<<<<<< HEAD
     @IBOutlet var reenterLabel: UITextField!
     @IBOutlet var passwordOutlet: UITextField!
     @IBOutlet var passwordBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
+=======
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
          registerForKeyboardNotifications()
         loginOutlet.delegate = self
+<<<<<<< HEAD
         passwordOutlet.delegate = self
         reenterLabel.delegate = self
         emailOutlet.delegate = self
         continueButton.isEnabled = false
         self.hideKeyboardWhenTappedAround()
+=======
+        self.hideKeyboardWhenTappedAround()
+        // Do any additional setup after loading the view.
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -37,6 +48,7 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
             errorLabel.text = "This login was already used"
             continueButton.isEnabled = false
         }
+<<<<<<< HEAD
         
         if(loginOutlet.text != nil && loginOutlet.text != "") {
         if(loginOutlet.text!.count < 3 || loginOutlet.text!.count > 16) {
@@ -69,15 +81,21 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
                }
     
         
+=======
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         errorLabel.text = ""
+<<<<<<< HEAD
     continueButton.isEnabled = false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         errorLabel.text = ""
+=======
+        continueButton.isEnabled = true
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     }
     
     private func registerForKeyboardNotifications() {
@@ -91,6 +109,7 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
                let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
                if notification.name == UIResponder.keyboardWillHideNotification {
+<<<<<<< HEAD
                    bottomLayoutConstraint.constant = 81
                 iconBottomLayoutConstraint.constant = 130
                 passwordBottomLayoutConstraint.constant = 133
@@ -98,6 +117,11 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
                    bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
                 iconBottomLayoutConstraint.constant = 20
                 passwordBottomLayoutConstraint.constant = 45
+=======
+                   bottomLayoutConstraint.constant = 80
+               } else {
+                   bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
                }
 
                view.needsUpdateConstraints()

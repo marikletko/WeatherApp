@@ -12,6 +12,7 @@ class MainWeatherViewController: UIViewController {
     @IBOutlet var weatherIcons: [UIView]!
     
     var mainWeatherViewModel:MainWeatherViewModelType?
+<<<<<<< HEAD
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
@@ -20,6 +21,11 @@ class MainWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+=======
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
         mainWeatherViewModel = MainWeatherViewModel()
         
         

@@ -1,6 +1,7 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class StartViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
@@ -57,10 +58,29 @@ class StartViewController: UIViewController, UITextFieldDelegate {
                    guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "RegisterFirstViewController") as? RegisterFirstViewController else { return }
                                            self.navigationController?.pushViewController(controller, animated: true)
                }
+=======
+class StartViewController: UIViewController {
+    @IBOutlet var passwordInput: UITextField!
+    @IBOutlet var loginInput: UITextField!
+    @IBOutlet var forgotPassword: UILabel!
+    @IBOutlet var loginOutlet: UIButton!
+    
+    @IBAction func loginButton(_ sender: Any) {
+    }
+    
+    @IBAction func gmailButton(_ sender: Any) {
+    }
+    
+    @IBAction func vkButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func fbButton(_ sender: UIButton) {
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
         if(UserDefaults.standard.bool(forKey: "loggedin")) {
             guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
@@ -99,6 +119,14 @@ class StartViewController: UIViewController, UITextFieldDelegate {
                   }
         }
     
+=======
+        self.hideKeyboardWhenTappedAround()
+        loginOutlet.layer.cornerRadius = loginOutlet.frame.size.height / 2
+        forgotPassword.attributedText = NSAttributedString(string: "Forgot password?", attributes:
+        [.underlineStyle: NSUnderlineStyle.single.rawValue])
+    }
+    
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBAction func forgotPasswordButton(_ sender: Any) {
       }
 

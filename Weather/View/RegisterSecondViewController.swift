@@ -9,9 +9,13 @@
 import UIKit
 
 class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
+<<<<<<< HEAD
     @IBOutlet var sexBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var sexTextField: UITextField!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
+=======
+    @IBOutlet var sexTextField: UITextField!
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
     @IBOutlet var workTextField: UITextField!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var addressTextField: UITextField!
@@ -51,6 +55,7 @@ class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
                let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
                if notification.name == UIResponder.keyboardWillHideNotification {
+<<<<<<< HEAD
                    bottomLayoutConstraint.constant = 85
                 sexBottomLayoutConstraint.constant = 133
                 iconBottomLayoutConstraint.constant = 130
@@ -59,6 +64,12 @@ class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
                 sexBottomLayoutConstraint.constant = 30
                 iconBottomLayoutConstraint.constant = 20
         }
+=======
+                   bottomLayoutConstraint.constant = 100
+               } else {
+                   bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
+               }
+>>>>>>> 67af8c72a8647782c16906bfc8dd746f7c900ad4
 
                view.needsUpdateConstraints()
 
