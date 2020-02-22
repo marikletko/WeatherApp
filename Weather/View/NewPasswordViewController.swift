@@ -8,21 +8,42 @@
 
 import UIKit
 
-class NewPasswordViewController: UIViewController {
+class NewPasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func goLoginVC(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
- 
     }
+    @IBOutlet var passwordTextfield: UITextField!
+  
+    @IBOutlet var goLoginOutlet: UIButton!
+    @IBOutlet var reenterTextfield: UITextField!
     
+    @IBOutlet var errorLabel: UILabel!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var reenterBottomLayoutConstraints: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        goLoginOutlet.isEnabled = false
+        passwordTextfield.delegate = self
+        reenterTextfield.delegate = self
 registerForKeyboardNotifications()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if(passwordTextfield.text != reenterTextfield.text) {
+            errorLabel.text = "Passwords do not match"
+            goLoginOutlet.isEnabled = false
+        } else if passwordTextfield.text!.count < 8 {
+            errorLabel.text = "Password is too short"
+        } else {
+            goLoginOutlet.isEnabled = true
+                       errorLabel.text = ""
+        }
+        
+        
     }
     
     private func registerForKeyboardNotifications() {
@@ -41,7 +62,7 @@ registerForKeyboardNotifications()
                   iconBottomLayoutConstraint.constant = 198
                } else {
                    bottomLayoutConstraint.constant = keyboardScreenEndFrame.height
-                reenterBottomLayoutConstraints.constant = 20
+                reenterBottomLayoutConstraints.constant = 60
                   iconBottomLayoutConstraint.constant = 20
                }
 

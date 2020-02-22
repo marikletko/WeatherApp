@@ -14,7 +14,6 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var loginOutlet: UITextField!
  @IBOutlet var continueButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
-    
     @IBOutlet var reenterLabel: UITextField!
     @IBOutlet var passwordOutlet: UITextField!
     @IBOutlet var passwordBottomLayoutConstraint: NSLayoutConstraint!
@@ -23,6 +22,7 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.isEnabled = false
          registerForKeyboardNotifications()
         loginOutlet.delegate = self
         passwordOutlet.delegate = self
@@ -38,37 +38,35 @@ class RegisterFirstViewController: UIViewController, UITextFieldDelegate {
             continueButton.isEnabled = false
         }
         
-        if(loginOutlet.text != nil && loginOutlet.text != "") {
+        if(loginOutlet.text != nil || loginOutlet.text == "") {
         if(loginOutlet.text!.count < 3 || loginOutlet.text!.count > 16) {
             errorLabel.text = "Login is not valid due to length"
             continueButton.isEnabled = false
         }
         }
         
-        if(passwordOutlet.text != nil && passwordOutlet.text != "") {
+        if(passwordOutlet.text != nil || passwordOutlet.text == "") {
             if(passwordOutlet.text!.count < 8 || passwordOutlet.text!.count > 16) {
                 errorLabel.text = "Password is not valid due to length"
                 continueButton.isEnabled = false
             }
         }
         
-        if(emailOutlet.text != nil && emailOutlet.text != "") {
+        if(emailOutlet.text != nil || emailOutlet.text == "") {
             if(!emailOutlet.text!.contains("@") && !emailOutlet.text!.contains(".")) {
-                errorLabel.text = "Wrong email"
+                errorLabel.text = "Wrong email address"
                 continueButton.isEnabled = false
-            } else {
-              
             }
         }
         
-        if((reenterLabel.text != passwordOutlet.text) && reenterLabel.text != "") {
+        if((reenterLabel.text != passwordOutlet.text)) {
                    continueButton.isEnabled = false
-            errorLabel.text = "Passwords not match"
-               } else {
-                   continueButton.isEnabled = true
-               }
-    
+            errorLabel.text = "Passwords do not match"
+        }
         
+        if(errorLabel.text == "" && loginOutlet.text != "" && passwordOutlet.text != "" && emailOutlet.text != "" && reenterLabel.text != "" ) {
+            continueButton.isEnabled = true
+        }
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
