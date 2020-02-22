@@ -9,10 +9,22 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-    
+     @IBOutlet var userInfoLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        userInfoLabel.text =
+        "userEmail : marikletko48@gmail.com\n" +
+        "userWork : Innowise-group\n" +
+        "userAddress : Kuzmy Chornogo street 18, 30\n" +
+        "userAge : 32 years\n" +
+        "userSex : Male\n" +
+        "userCountry : Belarus\n" +
+        "userCity : Minsk\n" +
+        "userZip : 220012"
     }
 
     @IBAction func logOutButton(_ sender: Any) {
@@ -20,24 +32,4 @@ class UserInfoViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
         
     }
-    
-    @IBOutlet var userInfoLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

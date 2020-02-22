@@ -8,24 +8,38 @@
 
 import UIKit
 
-class RegisterThirdViewController: UIViewController {
+class RegisterThirdViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func goLoginVC(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: Singleton.shared.currentAccount ?? "")
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBOutlet var goLoginOutlet: UIButton!
+    
+    @IBOutlet var zipTF: UITextField!
+    @IBOutlet var cityTF: UITextField!
+    @IBOutlet var countryTF: UITextField!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var zipBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        zipTF.delegate = self
+        cityTF.delegate = self
+        countryTF.delegate = self
+        goLoginOutlet.isEnabled = false
  registerForKeyboardNotifications()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if(zipTF.text != "" && cityTF.text != "" && countryTF.text != "") {
+            goLoginOutlet.isEnabled = true
+        }
+    }
     
     private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)

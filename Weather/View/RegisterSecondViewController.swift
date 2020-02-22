@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var sexBottomLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet var continueButton: UIButton!
     @IBOutlet var sexTextField: UITextField!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var workTextField: UITextField!
@@ -21,6 +22,8 @@ class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
     var array = ["Male", "Female", "Agender", "Androgyne", "Androgynous", "Bigender", "Cis", "FTM", "Gender fluid", "Gender Noncomforming", "Gender Questioning", "Gender variant", "Gender Variant", "Genderqueer", "Neutrois", "Non-binary", "Pangender", "Two-spirit", "Other"]
       override func viewDidLoad() {
         super.viewDidLoad()
+        workTextField.delegate = self
+        continueButton.isEnabled = false
         txtDatePicker.delegate = self
         sexTextField.delegate = self
         sexPicker.delegate = self
@@ -35,10 +38,18 @@ class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
         } else {
             showDatePickerSex()
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+          if(txtDatePicker.text != "" && sexTextField.text != "" && workTextField.text != "" && addressTextField.text != "") {
+                  continueButton.isEnabled = true
+              }
+    }
+        
+    
        // sexTextField.isEnabled = false
       //  workTextField.isEnabled = false
       //  addressTextField.isEnabled = false
-    }
     
     private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -125,7 +136,7 @@ class RegisterSecondViewController: UIViewController, UITextFieldDelegate {
    //     sexTextField.isEnabled = true
    //     workTextField.isEnabled = true
    //     addressTextField.isEnabled = true
-        
+      
        self.view.endEditing(true)
      }
 

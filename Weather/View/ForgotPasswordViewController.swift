@@ -8,16 +8,28 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var restoreButton: UIButton!
+    @IBOutlet var emailorlogTextfield: UITextField!
     @IBOutlet var iconBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var emailBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var bottomLayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        restoreButton.isEnabled = false
+        emailorlogTextfield.delegate = self
 registerForKeyboardNotifications()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+    }
+    
+        func textFieldDidEndEditing(_ textField: UITextField) {
+        if(emailorlogTextfield.text == nil || emailorlogTextfield.text == "") {
+            restoreButton.isEnabled = false
+        } else {
+            restoreButton.isEnabled = true
+            }
     }
     
     private func registerForKeyboardNotifications() {
