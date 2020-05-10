@@ -1,32 +1,29 @@
 import UIKit
 import CoreLocation
 
-class MainWeatherViewController: UIViewController {
-    
+final class MainWeatherViewController: UIViewController {
     @IBOutlet var weatherImg: UIImageView!
     @IBOutlet var cityAndCountryLabel: UILabel!
     @IBOutlet var tempAndDescLabel: UILabel!
     @IBOutlet var activity: UIActivityIndicatorView!
     @IBOutlet var activityBlur: UIVisualEffectView!
-    
+    @IBOutlet var errorView: UIView!
     @IBOutlet var weatherIcons: [UIView]!
     
     var mainWeatherViewModel:MainWeatherViewModelType?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
+    //  var locationManager: LocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         mainWeatherViewModel = MainWeatherViewModel()
         
         
         LocationManager.sharedInstance.getLocation { (location:CLLocation?, error:NSError?) in
-            
             if error != nil {
                 print(error!.localizedDescription)
+                self.activityBlur.isHidden = true
+                self.activity.isHidden = true
                 return
             }
             
@@ -68,30 +65,25 @@ class MainWeatherViewController: UIViewController {
                     self.tempAndDescLabel.text = self.mainWeatherViewModel?.tempAndDescLabel
                     self.activity.isHidden = true
                     self.activityBlur.isHidden = true
+                    self.errorView.isHidden = true
                     
                     let shareText =
-                    "Pressure: \(self.mainWeatherViewModel!.pressure)" +
-                    "\nWind speed:\(self.mainWeatherViewModel!.speed)" +
-                    "\nHumidity: \(self.mainWeatherViewModel!.humidity)" +
-                    "\nCity: \(self.mainWeatherViewModel!.cityAndCountryLabel)" +
+                        "Pressure: \(self.mainWeatherViewModel!.pressure)" +
+                            "\nWind speed:\(self.mainWeatherViewModel!.speed)" +
+                            "\nHumidity: \(self.mainWeatherViewModel!.humidity)" +
+                            "\nCity: \(self.mainWeatherViewModel!.cityAndCountryLabel)" +
                     "\n\(self.mainWeatherViewModel!.tempAndDescLabel)"
                     UserDefaults.standard.set(shareText, forKey: "shareText")
-                        
                 }
             })
-            
-            
         }
-        
     }
     
     @IBAction func shareWeatherButton(_ sender: UIButton) {
         let text = UserDefaults.standard.value(forKey: "shareText")
-                let textShare = [ text ]
+        let textShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textShare as [Any] , applicationActivities: nil)
-                activityViewController.popoverPresentationController?.sourceView = self.view
-                self.present(activityViewController, animated: true, completion: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
-    
-    
 }

@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC04CE2723FD5D32006A1871 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04CE2623FD5D32006A1871 /* StartViewController.swift */; };
-		EC04CE2923FD607D006A1871 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04CE2823FD607D006A1871 /* ForgotPasswordViewController.swift */; };
-		EC04CE2B23FD60C7006A1871 /* RegisterFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04CE2A23FD60C7006A1871 /* RegisterFirstViewController.swift */; };
-		EC04CE2D23FD610D006A1871 /* RegisterSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04CE2C23FD610D006A1871 /* RegisterSecondViewController.swift */; };
-		EC04CE2F23FD6246006A1871 /* RegisterThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04CE2E23FD6246006A1871 /* RegisterThirdViewController.swift */; };
 		EC1C375C23E1D4DE00AA10C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C375B23E1D4DE00AA10C8 /* AppDelegate.swift */; };
 		EC1C375E23E1D4DE00AA10C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C375D23E1D4DE00AA10C8 /* SceneDelegate.swift */; };
 		EC1C376323E1D4DE00AA10C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1C376123E1D4DE00AA10C8 /* Main.storyboard */; };
@@ -22,7 +17,6 @@
 		EC1C377523E1F89A00AA10C8 /* ForecastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C377423E1F89A00AA10C8 /* ForecastTableViewController.swift */; };
 		EC1C377823E1F95D00AA10C8 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C377723E1F95D00AA10C8 /* ForecastTableViewCell.swift */; };
 		EC1C377A23E1FCF400AA10C8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C377923E1FCF400AA10C8 /* LocationService.swift */; };
-		EC39B80223FE6F3F00C1776B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39B80123FE6F3F00C1776B /* NewPasswordViewController.swift */; };
 		EC5262B223E21985005C1718 /* WeeklyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262B123E21985005C1718 /* WeeklyWeatherModel.swift */; };
 		EC5262B423E21D0C005C1718 /* MainWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262B323E21D0C005C1718 /* MainWeatherViewModel.swift */; };
 		EC5262B623E21D1B005C1718 /* ForecastWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262B523E21D1B005C1718 /* ForecastWeatherViewModel.swift */; };
@@ -33,17 +27,9 @@
 		EC5262C823E2F551005C1718 /* ForecastWeatherCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262C723E2F551005C1718 /* ForecastWeatherCellViewModel.swift */; };
 		EC5262CA23E383B4005C1718 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262C923E383B4005C1718 /* Box.swift */; };
 		EC5262CD23E3901E005C1718 /* WeatherIconsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5262CC23E3901E005C1718 /* WeatherIconsMain.swift */; };
-		ECB5F7AE23FFF37900FFE073 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB5F7AD23FFF37900FFE073 /* Singleton.swift */; };
-		ECB5F7B023FFF6E900FFE073 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB5F7AF23FFF6E900FFE073 /* UserInfoViewController.swift */; };
-		ECB5F7B223FFF81D00FFE073 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB5F7B123FFF81D00FFE073 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC04CE2623FD5D32006A1871 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		EC04CE2823FD607D006A1871 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		EC04CE2A23FD60C7006A1871 /* RegisterFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstViewController.swift; sourceTree = "<group>"; };
-		EC04CE2C23FD610D006A1871 /* RegisterSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondViewController.swift; sourceTree = "<group>"; };
-		EC04CE2E23FD6246006A1871 /* RegisterThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterThirdViewController.swift; sourceTree = "<group>"; };
 		EC1C375823E1D4DE00AA10C8 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1C375B23E1D4DE00AA10C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC1C375D23E1D4DE00AA10C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +42,6 @@
 		EC1C377423E1F89A00AA10C8 /* ForecastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewController.swift; sourceTree = "<group>"; };
 		EC1C377723E1F95D00AA10C8 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		EC1C377923E1FCF400AA10C8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		EC39B80123FE6F3F00C1776B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		EC5262B123E21985005C1718 /* WeeklyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherModel.swift; sourceTree = "<group>"; };
 		EC5262B323E21D0C005C1718 /* MainWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewModel.swift; sourceTree = "<group>"; };
 		EC5262B523E21D1B005C1718 /* ForecastWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherViewModel.swift; sourceTree = "<group>"; };
@@ -67,9 +52,6 @@
 		EC5262C723E2F551005C1718 /* ForecastWeatherCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherCellViewModel.swift; sourceTree = "<group>"; };
 		EC5262C923E383B4005C1718 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		EC5262CC23E3901E005C1718 /* WeatherIconsMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconsMain.swift; sourceTree = "<group>"; };
-		ECB5F7AD23FFF37900FFE073 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		ECB5F7AF23FFF6E900FFE073 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
-		ECB5F7B123FFF81D00FFE073 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,15 +115,6 @@
 				EC1C377723E1F95D00AA10C8 /* ForecastTableViewCell.swift */,
 				EC1C377223E1F85B00AA10C8 /* MainWeatherViewController.swift */,
 				EC1C377423E1F89A00AA10C8 /* ForecastTableViewController.swift */,
-				EC04CE2623FD5D32006A1871 /* StartViewController.swift */,
-				EC04CE2823FD607D006A1871 /* ForgotPasswordViewController.swift */,
-				EC04CE2A23FD60C7006A1871 /* RegisterFirstViewController.swift */,
-				EC04CE2C23FD610D006A1871 /* RegisterSecondViewController.swift */,
-				EC04CE2E23FD6246006A1871 /* RegisterThirdViewController.swift */,
-				EC39B80123FE6F3F00C1776B /* NewPasswordViewController.swift */,
-				ECB5F7AD23FFF37900FFE073 /* Singleton.swift */,
-				ECB5F7AF23FFF6E900FFE073 /* UserInfoViewController.swift */,
-				ECB5F7B123FFF81D00FFE073 /* UserModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,27 +230,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC5262C823E2F551005C1718 /* ForecastWeatherCellViewModel.swift in Sources */,
-				ECB5F7B023FFF6E900FFE073 /* UserInfoViewController.swift in Sources */,
 				EC1C377A23E1FCF400AA10C8 /* LocationService.swift in Sources */,
-				EC04CE2B23FD60C7006A1871 /* RegisterFirstViewController.swift in Sources */,
 				EC5262CD23E3901E005C1718 /* WeatherIconsMain.swift in Sources */,
 				EC1C377823E1F95D00AA10C8 /* ForecastTableViewCell.swift in Sources */,
-				EC04CE2D23FD610D006A1871 /* RegisterSecondViewController.swift in Sources */,
 				EC1C375C23E1D4DE00AA10C8 /* AppDelegate.swift in Sources */,
-				ECB5F7B223FFF81D00FFE073 /* UserModel.swift in Sources */,
 				EC5262C623E2F4F8005C1718 /* ForecastWeatherCellViewModelType.swift in Sources */,
 				EC1C377023E1F77E00AA10C8 /* WeatherModel.swift in Sources */,
 				EC5262B623E21D1B005C1718 /* ForecastWeatherViewModel.swift in Sources */,
 				EC1C377323E1F85B00AA10C8 /* MainWeatherViewController.swift in Sources */,
 				EC5262C423E2EFED005C1718 /* ForecastWeatherViewModelType.swift in Sources */,
-				EC04CE2723FD5D32006A1871 /* StartViewController.swift in Sources */,
-				EC04CE2F23FD6246006A1871 /* RegisterThirdViewController.swift in Sources */,
-				ECB5F7AE23FFF37900FFE073 /* Singleton.swift in Sources */,
 				EC5262B423E21D0C005C1718 /* MainWeatherViewModel.swift in Sources */,
 				EC5262B223E21985005C1718 /* WeeklyWeatherModel.swift in Sources */,
-				EC39B80223FE6F3F00C1776B /* NewPasswordViewController.swift in Sources */,
 				EC5262B923E21D72005C1718 /* MainWeatherViewModelType.swift in Sources */,
-				EC04CE2923FD607D006A1871 /* ForgotPasswordViewController.swift in Sources */,
 				EC5262CA23E383B4005C1718 /* Box.swift in Sources */,
 				EC1C375E23E1D4DE00AA10C8 /* SceneDelegate.swift in Sources */,
 				EC1C377523E1F89A00AA10C8 /* ForecastTableViewController.swift in Sources */,
@@ -427,7 +391,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94AKL5PQGM;
 				INFOPLIST_FILE = Weather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +409,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94AKL5PQGM;
 				INFOPLIST_FILE = Weather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

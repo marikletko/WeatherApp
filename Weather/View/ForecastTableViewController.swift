@@ -2,18 +2,13 @@ import UIKit
 import CoreLocation
 
 class ForecastTableViewController: UITableViewController {
+    
     let reuseIdentifier = "cell"
     var forecastWeatherViewModel:ForecastWeatherViewModelType?
     var locationManager: LocationManager?
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.sectionHeaderHeight = 70
+        
  forecastWeatherViewModel = ForecastWeatherViewModel()
    
         
@@ -32,9 +27,12 @@ class ForecastTableViewController: UITableViewController {
         }
     }
         
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ((self.forecastWeatherViewModel?.numberOfRows())!)
+        
     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ForecastTableViewCell
@@ -46,6 +44,7 @@ class ForecastTableViewController: UITableViewController {
         tableViewCell.viewModel = cellViewModel
 
            return tableViewCell
+
     }
 
 

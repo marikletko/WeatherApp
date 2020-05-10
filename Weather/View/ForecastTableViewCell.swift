@@ -1,6 +1,6 @@
 import UIKit
 
-class ForecastTableViewCell: UITableViewCell {
+final class ForecastTableViewCell: UITableViewCell {
     
     @IBOutlet var foreImage: UIImageView!
     @IBOutlet var descLabel: UILabel!
@@ -16,5 +16,4 @@ class ForecastTableViewCell: UITableViewCell {
             timeLabel.text = viewModel.time
         }
     }
-
 }

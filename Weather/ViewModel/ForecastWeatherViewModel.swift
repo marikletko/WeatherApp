@@ -1,7 +1,7 @@
 import Foundation
 
 
-class ForecastWeatherViewModel: ForecastWeatherViewModelType {
+final class ForecastWeatherViewModel: ForecastWeatherViewModelType {
   
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ForecastWeatherCellViewModelType? {
         let weather = weeklyWeather.list[indexPath.row]
@@ -27,7 +27,7 @@ func updateWeatherInfo(latitude: Double, longtitude: Double, handler: @escaping(
                  print("\(error!.localizedDescription)")
                  return
              }
-             
+            
              do {
                 self.weeklyWeather = try JSONDecoder().decode(WeatherFinalForecast.self, from: data!)
                 handler(self.weeklyWeather, nil)
